@@ -1,0 +1,16 @@
+{% load crispy_forms_tags %}
+
+
+<h1>{{titulo}}</h1>
+<div class= 'col-md-8 col-md-offset-2'>
+<h2>Alumno</h2>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form class="" action="" method="POST" class=form-horizontal>{% csrf_token %}
+      <label for="">{{titulo}}</label>
+      {{form.as_p}}
+      <input type="submit" class ="btn btn-primary "name="" value="{{submit_btn}}">
+
+    </form>
+  </div>
+</div>

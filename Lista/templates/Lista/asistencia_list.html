@@ -1,0 +1,74 @@
+{%extends 'base.html'%}
+
+
+
+{%block content%}
+
+<form class="navbar-form navbar-right" methon="GET" action"">
+  <input type="text" class="form-control" name=q placeholder="Buscar...">
+  <!-- <input type="submit" name="" value="Buscar..."> -->
+</form>
+
+
+<h2 class="sub-header">Lista de alumnos</h2>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+
+              <tbody>
+                <thead>
+                  <tr>
+                    <th>id</th>
+                    <th>nombre(s)</th>
+                    <th>apellidos</th>
+                    <th>clase</th>
+                    <th>hora</th>
+                    <th>presente</th>
+
+                    </tr>
+                </thead>
+                  <tbody>
+
+
+
+    <ul>
+  {%for Lista in object_list%}
+
+
+    <tr>
+
+      <th>{{Lista.id}}</th>
+
+      <th><a href="/../modificar_alumno/{{Lista.id}}/">{{Lista.nombres}}</a></th>
+      <th><a href="#">{{Lista.apellidos}}</a></th>
+      <th><a href="#">{{Lista.clase}}</a></th>
+      <th><a href="#">{{Lista.hora}}</a></th>
+      <th><a href="#">{{Lista.presente}}</a></th>
+
+
+
+    </tr>
+
+  {%empty%}
+    <li>No hay alumnos en existencia</li>
+  {%endfor%}
+</ul>
+      </tbody>
+
+</table>
+
+</div>
+
+
+
+
+{%endblock %}
+<!-- {%block search%}
+
+
+
+<form class="navbar-form navbar-right">
+  <input type="text" class="form-control" placeholder="Search..."name="q" value ={{query|escape}} >
+</form>
+
+{%endblock%} -->

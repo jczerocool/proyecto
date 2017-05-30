@@ -1,0 +1,60 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<h1>buscar</h1>
+
+<<form action="."method="GET">
+  <<input type="text"name="q" value="{{ query|escape}}" class = "form-control" placeholder="search....">
+  <input type="submit" value="search" class="btn btn-primary">
+</form>
+
+
+{% if query%}
+   <<h2>result for {{ query|escape}}":</h2>
+
+   {% if results %}
+
+
+<<div class = "table-responsive">
+              <table class = "table table-striped">
+
+<<thead></thead>
+
+                  <<tr>
+                      <<th>nombres</th>
+                      <<th>apellidos</th>
+
+                  </tr>
+                </thead>
+                  <tbody>
+
+<ul>
+
+  {% for Lista in results %}
+
+  <tr></tr>
+    <th><a href = "lista/{{Lista.id}}/update">{{Lista.nombres}}</a></th>
+    <th>{{Lista.nombres}}</th>
+    <th>{{Lista.apellidos}}</th>
+    <th>{{Lista.clase}}</th>
+    <th>{{Lista.hora}}</th>
+  </tr>
+
+
+      {%endfor%}
+
+
+</ul>
+
+
+    </tbody>
+
+
+  </table>
+  </div>
+
++
+
+        {% else %}
+        <p>No alumnos find</p>
+        {%endif%}
